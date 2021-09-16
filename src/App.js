@@ -4,8 +4,11 @@ import {
   Switch,
   Route,
   Link,
-  useParams
+  useParams,
 } from "react-router-dom";
+
+import LoginButton from "./Components/Buttons/LoginButton";
+import CreateButton from "./Components/Buttons/CreateButton"
 
 export default function App() {
   return (
@@ -48,13 +51,13 @@ export default function App() {
           </Route>
           <Route path="/create-post">
             <CreatePost />
-          </Route>           
-          <Route path="/post-detail/:id" >
+          </Route>
+          <Route path="/post-detail/:id">
             <PostDetail />
-          </Route>   
+          </Route>
           <Route path="/">
             <Home />
-          </Route>                   
+          </Route>
         </Switch>
       </div>
     </Router>
@@ -62,7 +65,17 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return (
+    <>
+      <h2>Home</h2>
+      <LoginButton
+        text="Log in"      
+      />
+      <CreateButton
+        text="Create account"  
+      />
+    </>
+  );
 }
 
 function Login() {
@@ -82,8 +95,6 @@ function CreatePost() {
 }
 
 function PostDetail() {
-  const {id} = useParams();
+  const { id } = useParams();
   return <h2>Post Detail - {id}</h2>;
 }
-
-

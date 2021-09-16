@@ -4,7 +4,7 @@ import './styles.scss'
 const LoginButton = props => {
     const {text} = props
     return(
-        <button type="button" class="btn-login">{text}</button>
+        <button type="button" class="btn-create">{text}</button>
     );
 }
 

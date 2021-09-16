@@ -1,0 +1,18 @@
+@import "../../../Assets/Styles/global.scss";
+
+.btn-login{
+    height: 45px;
+    width: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: $base-inverted;
+    border-radius: 5px;
+    border:none;    
+    color:$accent-brand;
+    &:hover{
+        background-color: $base-10;
+        color:$accent-brand-darker;
+        cursor: pointer;
+    }
+}
