@@ -1,0 +1,20 @@
+@import "/src/Assets/Styles/global.scss";
+
+.aside-link{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: $base;
+    border-radius: 4px;
+    &:hover{
+        color: $accent-brand;
+        background-color: $base-20;
+        cursor: pointer;
+    }
+}
+
+.icon-left-aside{
+    margin-right: .5rem;
+    width: 24;
+    height: 24;
+}
