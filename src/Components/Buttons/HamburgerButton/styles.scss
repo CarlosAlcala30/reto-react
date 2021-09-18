@@ -1,0 +1,17 @@
+@import "../../../Assets/Styles/global.scss";
+
+.btn-create{
+    height: 45px;
+    width: 140px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: $accent-brand;
+    border-radius: 5px;
+    border:none;    
+    color:$base-10;
+    &:hover{
+        background-color: $accent-brand-darker;
+        cursor: pointer;
+    }
+}

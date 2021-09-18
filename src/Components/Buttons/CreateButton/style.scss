@@ -1,6 +1,7 @@
 @import "../../../Assets/Styles/global.scss";
 
-.btn-login{
+.btn-create{
+    box-sizing: border-box;
     height: 45px;
     white-space: nowrap;
     margin: 5px;
@@ -8,16 +9,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    background-color: $base-inverted;
+    background-color: $accent-brand;
     border-radius: 5px;
     border:none;    
-    color:$accent-brand;
+    color:$base-10;
     text-align: center;
     text-decoration: none;
     &:hover{
-        background-color: $base-10;
-        color:$accent-brand-darker;
-        cursor: pointer;
+        color:$base-10;
+        background-color: $accent-brand-darker;
         text-decoration: none;
+        cursor: pointer;
     }
 }
