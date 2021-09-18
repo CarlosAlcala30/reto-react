@@ -7,6 +7,10 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
+import AsideLink from "./Components/Aside/AsideLink"
+import iconHome from "./Assets/Images/icons/home.svg"
+import IconSocialNetwork from "./Components/Aside/iconSocialNetwork"
+import imageIcon from "./Assets/Images/icons/twitter.svg"
 
 import Navegacion from "./Components/Navbar"
 
@@ -24,8 +28,6 @@ export default function App() {
           setSearchState={setSearch}
       />
       <div>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/login">
             <Login />
