@@ -1,0 +1,10 @@
+@import "/src/Assets/Styles/global.scss";
+
+.image-social-network{
+    width: 24;
+    height: 24;
+    &:hover{
+        background-color: $base-20;
+        cursor: pointer;
+    }
+}

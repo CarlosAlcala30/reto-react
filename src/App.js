@@ -6,8 +6,10 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-import AsideLink from "./Components/Aside/AsideLink";
+import AsideLink from "./Components/Aside/AsideLink"
 import iconHome from "./Assets/Images/icons/home.svg"
+import IconSocialNetwork from "./Components/Aside/iconSocialNetwork"
+import imageIcon from "./Assets/Images/icons/twitter.svg"
 
 export default function App() {
   return (
@@ -68,6 +70,9 @@ function Home() {
     <>
     <h2>Home</h2>
     <AsideLink text="Home" image= {iconHome} />
+    
+    <IconSocialNetwork image= {imageIcon} />
+    <p>prueba</p>
     </>
   );
   
