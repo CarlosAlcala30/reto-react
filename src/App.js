@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useState} from "react";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,36 +8,22 @@ import {
   useParams,
 } from "react-router-dom";
 
-import LoginButton from "./Components/Buttons/LoginButton";
-import CreateButton from "./Components/Buttons/CreateButton"
+import Navegacion from "./Components/Navbar"
 
 export default function App() {
+
+  const [search,setSearch] = useState("");
+
+
   return (
     <Router>
+      <Navegacion 
+          loginPage="/login"
+          createPage="/register"
+          searchState={search}
+          setSearchState={setSearch}
+      />
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-            <li>
-              <Link to="/create-post">Create Post</Link>
-            </li>
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
-            <li>
-              <Link to="/post-detail/4wda1sda4f">Post Detail</Link>
-            </li>
-          </ul>
-        </nav>
-
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -66,15 +53,7 @@ export default function App() {
 
 function Home() {
   return (
-    <>
       <h2>Home</h2>
-      <LoginButton
-        text="Log in"      
-      />
-      <CreateButton
-        text="Create account"  
-      />
-    </>
   );
 }
 

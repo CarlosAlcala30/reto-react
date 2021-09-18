@@ -1,12 +1,14 @@
-import React from 'react';
-import './styles.scss'
+import React from "react";
+import "./style.scss";
 
-const LoginButton = props => {
-    const {text} = props
-    return(
-        <button type="button" class="btn-create">{text}</button>
-    );
-}
+import { useHistory } from "react-router-dom";
 
+const CreateButton = (props) => {
+  const history = useHistory();
+  const { text, page } = props;
+  return (
+    <button type="button" className="btn-create" onClick={()=>{history.push(page)}}>{text}</button>
+  );
+};
 
-export default LoginButton
+export default CreateButton;
