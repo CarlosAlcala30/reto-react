@@ -8,8 +8,8 @@ const AsideRight = () => {
   
   //  const [user, loading, error] = useAuthState(firebase.auth()); //eslint-disable-line
 
-      return (
-        <>
+ return (
+      
           <aside
             className="d-none d-xl-block col-xl-3"
             style={{
@@ -437,10 +437,9 @@ const AsideRight = () => {
               </ul>
             </div>
           </aside>
-        </>
+        
       );
-    }
-    
+        
 };
 
 export default AsideRight;
