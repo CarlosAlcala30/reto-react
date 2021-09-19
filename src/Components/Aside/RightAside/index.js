@@ -3,6 +3,16 @@ import React from 'react';
 //import Avatar from '@material-ui/core/Avatar';
 //import firebase from '../../config/firebaseConfig';
 //import { useAuthState } from 'react-firebase-hooks/auth';
+import SponsorsBlock from './SponsorsBlock';
+import Listings from './Listings';
+import NewsBlock from './NewsBlock';
+import DiscussBlock from './discussBlock';
+import HelpBlock from './HelpBlock';
+import Explainlikeimfive from './Explainlikeimfive';
+import ChallengeBlock from './ChallengeBlock';
+import MetaBlock from './MetaBlock';
+
+
 
 const AsideRight = () => {
   
@@ -12,8 +22,15 @@ const AsideRight = () => {
       
           <aside
             className="d-none d-xl-block col-xl-3">
-            {/* ¿Cómo agrego aquío mis subcomponentes del rightsidebar*/} 
-          </aside>
+              <SponsorsBlock />
+              <Listings />
+              <NewsBlock />
+              <HelpBlock />
+              <DiscussBlock />
+              <Explainlikeimfive />
+              <ChallengeBlock />
+              <MetaBlock />
+           </aside>
         
       );
         
