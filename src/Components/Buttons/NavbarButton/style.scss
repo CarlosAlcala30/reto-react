@@ -1,0 +1,14 @@
+@import "../../../Assets/Styles/global.scss";
+
+.button-search{
+    height: 40px;
+    width: 40px;
+    margin-left: 5px;
+    margin-left: 5px;
+    background-color: $base-inverted;
+    border-radius: 100%;
+    border:none;
+    &:hover{
+        background-color: $base-10;
+    }
+}

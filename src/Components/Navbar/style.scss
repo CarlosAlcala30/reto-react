@@ -1,0 +1,30 @@
+@import "../../Assets/Styles/global.scss";
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+.nav-left-side{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav-right-side{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+
+
+

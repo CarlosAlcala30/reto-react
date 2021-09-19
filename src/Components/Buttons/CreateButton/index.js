@@ -3,12 +3,12 @@ import "./style.scss";
 
 import { useHistory } from "react-router-dom";
 
-const LoginButton = (props) => {
+const CreateButton = (props) => {
   const history = useHistory();
   const { text, page } = props;
   return (
-    <button type="button" className="btn-login" onClick={()=>{history.push(page)}}>{text}</button>
+    <button type="button" className="btn-create" onClick={()=>{history.push(page)}}>{text}</button>
   );
 };
 
-export default LoginButton;
+export default CreateButton;
