@@ -1,33 +1,45 @@
-import React,{useState} from "react";
-
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  useParams,
+  useParams
 } from "react-router-dom";
 import AsideLink from "./Components/Aside/AsideLink"
 import iconHome from "./Assets/Images/icons/home.svg"
 import IconSocialNetwork from "./Components/Aside/iconSocialNetwork"
 import imageIcon from "./Assets/Images/icons/twitter.svg"
 
-import Navegacion from "./Components/Navbar"
-
 export default function App() {
-
-  const [search,setSearch] = useState("");
-
-
   return (
     <Router>
-      <Navegacion 
-          loginPage="/login"
-          createPage="/register"
-          searchState={search}
-          setSearchState={setSearch}
-      />
       <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+            <li>
+              <Link to="/create-post">Create Post</Link>
+            </li>
+            <li>
+              <Link to="/search">Search</Link>
+            </li>
+            <li>
+              <Link to="/post-detail/4wda1sda4f">Post Detail</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/login">
             <Login />
@@ -40,13 +52,13 @@ export default function App() {
           </Route>
           <Route path="/create-post">
             <CreatePost />
-          </Route>
-          <Route path="/post-detail/:id">
+          </Route>           
+          <Route path="/post-detail/:id" >
             <PostDetail />
-          </Route>
+          </Route>   
           <Route path="/">
             <Home />
-          </Route>
+          </Route>                   
         </Switch>
       </div>
     </Router>
@@ -55,8 +67,15 @@ export default function App() {
 
 function Home() {
   return (
-      <h2>Home</h2>
+    <>
+    <h2>Home</h2>
+    <AsideLink text="Home" image= {iconHome} />
+    <IconSocialNetwork image= {imageIcon} />
+    <p>prueba</p>
+    </>
   );
+  
+
 }
 
 function Login() {
@@ -76,6 +95,8 @@ function CreatePost() {
 }
 
 function PostDetail() {
-  const { id } = useParams();
+  const {id} = useParams();
   return <h2>Post Detail - {id}</h2>;
 }
+
+

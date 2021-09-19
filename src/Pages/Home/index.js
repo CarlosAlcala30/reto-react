@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import "./style.scss"
 import { Container, Row, Col } from "reactstrap";
+import Media from "react-media";
 
 const HomePage = props => {
     return (
@@ -23,7 +24,15 @@ const HomePage = props => {
             )}                
 
             {matches.large && (
-              <div></div>
+              <div>
+                  <Container>
+                      <Row>
+                          <Col></Col>
+                          <Col></Col>
+                          <Col></Col>
+                      </Row>
+                  </Container>
+              </div>
             )}
           </Fragment>
         )}
