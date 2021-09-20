@@ -1,0 +1,39 @@
+@import "../../../Assets/Styles/global.scss";
+
+ul{
+
+    list-style: none;
+}
+
+
+.filter-button{
+    position: relative;
+    height: 40px;
+    width: fit-content;
+    margin: 0 10px 0 10px;
+    padding: 5px;
+    background-color: $base-10;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    border:none;
+    border-radius: 2px;
+    list-style: none;
+    transition: 0.1s;
+    &:hover{
+        color: $accent-brand;
+        background-color: rgb(220, 220, 241);
+        border-bottom: solid 3px $accent-brand-darker;
+        
+    }
+    &:focus::after{
+        position: absolute;
+        content: '';
+        width: 80%;
+        height: 3px;
+        background-color: $accent-brand-darker;
+        display:block;
+        bottom: -3px;
+        left: 10%;
+    }    
+
+}

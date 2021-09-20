@@ -1,0 +1,26 @@
+@import "../../../Assets/Styles/global.scss";
+
+.btn-group{
+    border: none;    
+}
+
+.btn{
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: $base-inverted;
+    img{
+        height: 45px;
+        width: 45px;
+        &:hover{
+            border-radius: 100%;
+            border: solid 1px $base-20;
+        }
+    }
+    &:focus{
+        outline: none;
+        border:none;
+    }
+    
+
+}
