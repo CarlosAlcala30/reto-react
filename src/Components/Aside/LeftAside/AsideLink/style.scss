@@ -6,9 +6,12 @@
     text-decoration: none;
     color: $base;
     border-radius: 4px;
+    margin-top: .5rem;
+    padding: .2rem;
+    width:  240px;
     &:hover{
         color: $accent-brand;
-        background-color: $base-20;
+        background-color: $base-10;
         cursor: pointer;
     }
 }

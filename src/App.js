@@ -6,10 +6,9 @@ import {
   Link,
   useParams
 } from "react-router-dom";
-import AsideLink from "./Components/Aside/AsideLink"
-import iconHome from "./Assets/Images/icons/home.svg"
-import IconSocialNetwork from "./Components/Aside/iconSocialNetwork"
-import imageIcon from "./Assets/Images/icons/twitter.svg"
+import { Container, Row, Col } from "reactstrap";
+import Media from "react-media";
+import HomePage from "./Pages/Home/index"
 
 export default function App() {
   return (
@@ -57,25 +56,13 @@ export default function App() {
             <PostDetail />
           </Route>   
           <Route path="/">
-            <Home />
+            <HomePage />
+
           </Route>                   
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return (
-    <>
-    <h2>Home</h2>
-    <AsideLink text="Home" image= {iconHome} />
-    <IconSocialNetwork image= {imageIcon} />
-    <p>prueba</p>
-    </>
-  );
-  
-
 }
 
 function Login() {

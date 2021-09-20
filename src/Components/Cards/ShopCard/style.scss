@@ -1,0 +1,21 @@
+@import "/src/Assets/Styles/global.scss";
+
+.card-shop{
+    margin-top: 3rem;
+}
+
+.image-shop{
+ width: 240px;
+ height: 240px;
+ border-radius: 6px;
+ &:hover{
+    cursor: pointer;
+}
+ }
+
+.image-title{
+    color: $accent-brand;
+    &:hover{
+        cursor: pointer;
+}
+ }

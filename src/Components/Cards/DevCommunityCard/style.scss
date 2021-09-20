@@ -1,0 +1,16 @@
+@import "/src/Assets/Styles/global.scss";
+
+.dev-title-purple{
+    color: $accent-brand;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.card-body{
+    
+    display: block;
+    margin: 1rem;
+   //width:  240px;
+   //height: 300px;
+}
