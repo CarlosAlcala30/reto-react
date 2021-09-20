@@ -79,3 +79,9 @@ function PostDetail() {
   const { id } = useParams();
   return <h2>Post Detail - {id}</h2>;
 }
+
+function AsideLinkSearch() {
+  return(
+    AsideLinkSearch
+  )
+}
