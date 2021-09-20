@@ -68,7 +68,7 @@ function Register() {
 }
 
 function Search() {
-  return <h2>Search</h2>;
+  return AsideLinkSearch;
 }
 
 function CreatePost() {
@@ -78,10 +78,4 @@ function CreatePost() {
 function PostDetail() {
   const { id } = useParams();
   return <h2>Post Detail - {id}</h2>;
-}
-
-function AsideLinkSearch() {
-  return(
-    AsideLinkSearch
-  )
 }
