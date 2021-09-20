@@ -1,66 +1,80 @@
-import React,{useState} from "react";
+import React, { useState, useEffect } from "react";
+import { isExpired } from "react-jwt";
+
+import "./App.scss";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   useParams,
+  Redirect,
 } from "react-router-dom";
-import AsideLink from "./Components/Aside/AsideLink"
-import iconHome from "./Assets/Images/icons/home.svg"
-import IconSocialNetwork from "./Components/Aside/iconSocialNetwork"
-import imageIcon from "./Assets/Images/icons/twitter.svg"
 
-import Navegacion from "./Components/Navbar"
+import Navegacion from "./Components/Navbar";
+
+//paginas
+import LoginPage from "./Pages/Login";
+import CreatePostPage from "./Pages/CreatePost";
 
 export default function App() {
+  const [search, setSearch] = useState("");
+  const [userLogged, setUserLogged] = useState({});
+  const [isLogged, setIsLogged] = useState();
 
-  const [search,setSearch] = useState("");
-
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("userData"));
+    if (userInfo) {
+      const expired = isExpired(userInfo.token);
+      if (!expired) {
+        setUserLogged(userInfo);
+        setIsLogged(true);
+      } else {
+        localStorage.removeItem("userData");
+      }
+    }
+  }, []);
 
   return (
     <Router>
-      <Navegacion 
-          loginPage="/login"
-          createPage="/register"
-          searchState={search}
-          setSearchState={setSearch}
+      {/*navbar*/}
+      <Navegacion
+        loginPage="/login"
+        createPage="/register"
+        searchState={search}
+        setSearchState={setSearch}
+        isLogged={isLogged}
+        userLogged={userLogged}
       />
-      <div>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/create-post">
-            <CreatePost />
-          </Route>
-          <Route path="/post-detail/:id">
-            <PostDetail />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+
+      {/*paginas*/}
+      <Switch>
+        <Route path="/login">
+          <LoginPage handlerUserLogged={setUserLogged} handlerIsLogged={setIsLogged} />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
+        <Route path="/create-post">
+          {isLogged ? <CreatePostPage /> : <Redirect to="/" />}
+        </Route>
+        <Route path="/post-detail/:id">
+          <PostDetail />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+      {/*footer*/}
     </Router>
   );
 }
 
 function Home() {
-  return (
-      <h2>Home</h2>
-  );
-}
-
-function Login() {
-  return <h2>Login</h2>;
+  return <h2>Home</h2>;
 }
 
 function Register() {
@@ -69,10 +83,6 @@ function Register() {
 
 function Search() {
   return <h2>Search</h2>;
-}
-
-function CreatePost() {
-  return <h2>CreatePost</h2>;
 }
 
 function PostDetail() {
