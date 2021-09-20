@@ -1,8 +1,8 @@
 import React from 'react';
 
-function NewsBlock(props) {
+function NewsBlock() {
     return (
- <div classname="card mt-4" id="{props.id}">
+ <div classname="card mt-4">
   <div classname="card-header font-weight-bold">
     <h4>#news</h4>
   </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-//import './index.css';
+import './index.scss';
 //import Avatar from '@material-ui/core/Avatar';
 //import firebase from '../../config/firebaseConfig';
 //import { useAuthState } from 'react-firebase-hooks/auth';

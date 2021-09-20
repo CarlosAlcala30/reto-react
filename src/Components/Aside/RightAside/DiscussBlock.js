@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DiscussBlock(props) {
+function DiscussBlock() {
     return (
         <div className="card mt-4">
             <div className="card-header font-weight-bold">

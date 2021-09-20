@@ -3,7 +3,7 @@ import React from 'react';
 function Listings(props) {
     return (
      
-            <div className="card mt-4 r-card-list" id={props.id}>
+            <div className="card mt-4 r-card-list">
                 <div className="card-header font-weight-bold a-right">
                     <h4 className="mt-1">Listings</h4>
                     <a href="#" className="post-l">See all</a>

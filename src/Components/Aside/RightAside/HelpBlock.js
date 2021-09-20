@@ -1,8 +1,8 @@
 import React from 'react';
 
-function HelpBlock(props) {
+function HelpBlock() {
     return (
-        <div className="card mt-4" id="{props.id}">
+        <div className="card mt-4">
             <div className="card-header font-weight-bold">
                 <h4>#help</h4>
             </div>
