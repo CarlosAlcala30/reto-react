@@ -1,0 +1,61 @@
+footer {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background: #d6d6d7;
+  padding: 3rem;
+  color: #575757;
+  position: relative;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+}
+
+footer a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #242424;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+footer div > a {
+  margin-top: 16px !important;
+}
+
+footer #footer-container {
+  line-height: 1.5;
+  text-align: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 4rem;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  padding: 1rem;
+}
+
+footer .post-list {
+  padding: 5px;
+}
+
+footer a {
+  font-weight: bold;
+  padding: 0;
+}
+
+footer .footer-content {
+  font-size: 0.875rem;
+}
+
+footer p {
+  margin: 0px;
+}
+
+footer p:hover {
+  color: #575757;
+  cursor: default;
+}
+/*# sourceMappingURL=styles.css.map */

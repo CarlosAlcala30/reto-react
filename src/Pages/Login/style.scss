@@ -1,0 +1,107 @@
+@import "../../Assets/Styles/global.scss";
+
+
+.main-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $base-10;
+}
+
+.login-container{    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0 20px 0;
+    padding: 3rem;
+    width: 640px;
+    height: 720px;
+    background-color: $base-inverted;
+    border: solid 1px $base-20;
+    border-radius: 10px;
+
+    h1{
+        font-weight: 900;
+        font-size: 30px;
+    }
+
+}
+
+.btn-container{
+    width: 100%;
+}
+
+.btn-apple{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border:none;
+    border-radius: 7px;
+    color: $base-inverted;
+    background-color: $base;
+    img{
+        margin-right: 10px;
+        width: 25px;
+        filter: invert(1);
+    }
+}
+
+.btn-github{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border:none;
+    border-radius: 7px;
+    color: $base-inverted;
+    background-color: $base-a90;
+    img{
+        margin-right: 10px;
+        width: 25px;
+        filter: invert(1);
+    }
+}
+
+.btn-twitter{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border:none;
+    border-radius: 7px;
+    color: $base-inverted;
+    background-color: $twitter;
+    img{
+        margin-right: 10px;
+        width: 25px;
+        filter: invert(1);
+    }
+}
+
+.btn-continue{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    border:none;
+    border-radius: 7px;
+    color: $base-inverted;
+    background-color: $accent-brand;
+    &:hover{
+        background-color: $accent-brand-darker;
+    }
+}
+
+.forgot{
+    margin-top: 10px;
+    a{
+        &:hover{
+
+            text-decoration: none;
+        }
+    }   
+}
