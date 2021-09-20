@@ -16,6 +16,7 @@ import Navegacion from "./Components/Navbar";
 //paginas
 import LoginPage from "./Pages/Login";
 import CreatePostPage from "./Pages/CreatePost";
+import HomePage from "./Pages/Home";
 
 export default function App() {
   const [search, setSearch] = useState("");
@@ -65,7 +66,7 @@ export default function App() {
           <PostDetail />
         </Route>
         <Route path="/">
-          <Home />
+          <HomePage />
         </Route>
       </Switch>
       {/*footer*/}
@@ -73,17 +74,14 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
+
 
 function Register() {
   return <h2>Register</h2>;
 }
 
 function Search() {
-  return AsideLinkSearch;
-}
+return <h2>Search</h2>}
 
 function PostDetail() {
   const { id } = useParams();

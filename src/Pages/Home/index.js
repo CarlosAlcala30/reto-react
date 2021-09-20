@@ -1,10 +1,13 @@
 import React, { Fragment } from "react";
 import "./style.scss"
 import { Container, Row, Col } from "reactstrap";
-
+import Media from 'react-media';
+import AsideRight from "../../Components/Aside/RightAside";
+import Footer from '../../Components/Footer';
+                                                                                                      
 const HomePage = props => {
     return (
-        <main>
+        <main className="container">
       <Media
         queries={{
           small: "(max-width: 399px)",
@@ -23,13 +26,22 @@ const HomePage = props => {
             )}                
 
             {matches.large && (
-              <div></div>
-            )}
+              <Container classname="main-container">
+               <Row>
+                 <Col className="col-2"></Col>
+                 <Col className="col-6"></Col>
+                 <AsideRight />
+               </Row>     
+             </Container>
+
+             )} <Footer />
           </Fragment>
         )}
-      </Media>
-    </main>
-            
+       </Media>
+     </main>
+       
 
      );
 }
+
+export default HomePage

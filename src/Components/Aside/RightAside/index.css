@@ -1,0 +1,110 @@
+/*CARD 2ND PAGE RIGHT ASIDE*/
+#right-sidebar .post-detail-profile {
+  top: 72px;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info {
+  border-top: 2rem solid #202428;
+  padding-top: 0px;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info .card-header {
+  border: none;
+  background: transparent;
+  margin-top: -2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info .card-header img {
+  margin-bottom: 0px;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info .card-header .card-title {
+  margin-top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: .5rem;
+  margin-bottom: .25rem;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info .card-body .follow-btn {
+  background-color: #323ebe;
+  width: 100%;
+  height: 3em;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  padding: .5rem 1rem;
+  height: auto;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info .card-body .follow-btn:hover {
+  background-color: #2d37aa;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info .card-body .list-style {
+  list-style-type: none;
+  padding: 0;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info .card-body .list-style li {
+  margin-bottom: .5rem;
+}
+
+#right-sidebar .post-detail-profile .post-detail-profile-info .card-body .simon-txt {
+  font-size: .75rem;
+  color: #64707d;
+}
+
+#right-sidebar .img-size {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-bottom: 1em;
+}
+
+#right-sidebar .laptop-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#right-sidebar .card-span {
+  opacity: .40;
+}
+
+#right-sidebar .card-txt {
+  color: gray;
+  font-size: small;
+  font-weight: normal;
+  padding-top: .25em;
+  padding-left: 2em;
+}
+
+#right-sidebar .emoji1::after {
+  content: "\1F389";
+}
+
+#right-sidebar .emoji2::after {
+  content: "\1F195\1F41D";
+}
+
+#right-sidebar .emoji3::after {
+  content: "\1F53D";
+}
+
+#right-sidebar .text-bold {
+  font-weight: bold;
+}
+
+/* End of Aside Right */
+/*# sourceMappingURL=index.css.map */
