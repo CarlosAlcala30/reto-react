@@ -2,26 +2,40 @@ import './styles.scss'
 import { Link } from 'react-router-dom';
 
 
-const MainCard =  (props)=> {
+/*const CardComponent =  (props)=> {
 
     const { postKey,  postIndex } =  props
     const { comments, coverImage, positiveReactionsCount, readablePublishedDate, readingTimeMinutes, tagsList, title, writer} =  props.postData
-
-    
+*/
+export default function CardComponent(props) {
+    const {
+            coverImage,
+            userName="Jhon Doe",
+            readablePublishedDate="15 de Sep",
+            title="Clone Dev.TO in React",
+            positiveReactionsCount=10,
+            readingTimeMinutes=6,
+            isFeature=true,
+            tagsList=['Javascript','Firebase, Web developers'],
+            _id,
+            comments=['Excelente trabajo','Pudo ser peor, se esforzaron al menos']
+         } = props
     return(
+    
+   
 
         <div className="card mt-3 br-post post-card">
-          { postIndex == 0 && <img src={coverImage} className="card-img-top" alt="..."/> }
-            <div className="card-body p-3" key={postKey}>
+          { isFeature && <img src={coverImage} className="card-img-top" alt="..."/> }
+            <div className="card-body p-3" key={_id}>
                 <div className="d-flex c-header">
                         <img src="https://picsum.photos/200/300" alt="" className="br-100 "/>
                     <div className="d-flex c-name">
-                        <h6 className="nickname mb-0">{writer.userName}</h6>
+                        <h6 className="nickname mb-0">{userName}</h6>
                         <p>{readablePublishedDate }</p>
                     </div>   
                 </div>
                 <div className="card-content pl-5 pt-2">
-                    <Link to={`/postDetail/${postKey}`} className="post-list">
+                    <Link to={`/postDetail/${_id}`} className="post-list">
                         <h4 className="card-title">{title}</h4>
                     </Link>
                     <div className="d-flex h-order">
@@ -34,7 +48,7 @@ const MainCard =  (props)=> {
                     </div>
                     <div className=" d-flex read">
                         <div>
-                            { positiveReactionsCount != 0 && <Link color='none' className='counters' to={`/postDetail/${postKey}`}>
+                            { positiveReactionsCount != 0 && <Link color='none' className='counters' to={`/postDetail/${_id}`}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" role="img"
                                         aria-labelledby="ah0ho4vrguhqcalal3r0v1fzvlxju7zc"
@@ -47,7 +61,7 @@ const MainCard =  (props)=> {
                                     </svg>
                                     <span className="not-b"> {positiveReactionsCount} reactions</span>
                             </Link> }
-                            <Link className='counters' to={`/postDetail/${postKey}`}>
+                            <Link className='counters' to={`/postDetail/${_id}`}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" role="img"
                                 aria-labelledby="aavwx5vmqdgx8wvzfg593jo469ge3dnz"
@@ -74,4 +88,3 @@ const MainCard =  (props)=> {
 
 }
 
-export default MainCard
