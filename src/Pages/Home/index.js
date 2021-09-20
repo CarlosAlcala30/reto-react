@@ -7,7 +7,7 @@ import Footer from '../../Components/Footer';
                                                                                                       
 const HomePage = props => {
     return (
-        <main>
+        <main className="container">
       <Media
         queries={{
           small: "(max-width: 399px)",
@@ -26,21 +26,20 @@ const HomePage = props => {
             )}                
 
             {matches.large && (
-           <main>
-             <Container>
+              <Container classname="main-container">
                <Row>
                  <Col className="col-2"></Col>
                  <Col className="col-6"></Col>
                  <AsideRight />
-               </Row>
+               </Row>     
              </Container>
-           </main>
-            )}
+
+             )} <Footer />
           </Fragment>
         )}
-      </Media>
-    </main>
-            
+       </Media>
+     </main>
+       
 
      );
 }

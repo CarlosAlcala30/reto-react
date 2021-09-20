@@ -1,40 +1,34 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 
+
+const listingPosts= [
+    {title:'React Developer - Full-Time, Remote', category:'jobs', link:'#'}, 
+    {title:'Turn what you\'ve learned into experience for jobs!!', category:'collabs', link:'#'}, 
+    {title:'Tailwind UI Kit - 1000+ tailwindcss ready-to-drop-in components, 30 templates, built-in support for react, angular, and vue', category:'products', link:'#'}, 
+    {title:'Simple Code Execution Monitoring, built for developers', category:'products', link:'#'}, 
+    {title:'Bomberland is live 🎉 A competitive sandbox for practising machine learning', category:'products', link:'#'}, 
+    {title:'NotionMailer - a tool that allows to write, manage and send newsletters directly from Notion', category:'products', link:'#'}, 
+]
 function Listings() {
     return (
      
-            <div className="card mt-4 r-card-list">
-                <div className="card-header font-weight-bold a-right">
-                    <h4 className="mt-1">Listings</h4>
-                    <a href="#" className="post-l">See all</a>
-                </div>
-                <ul className="list-group list-group-flush">
-                    <li className="list-group-item">React Developer - Full-Time, Remote
-                        <div>
-                            <p className="text-muted l-text">jobs</p>
-                        </div>
-                    </li>
-                    <li className="list-group-item">Course Launch:Competitive Programming - Crack Your
-                        Coding Interview
-                        <div>
-                            <p className="text-muted l-text">education</p>
-                        </div>
-                    </li>
-                    <li className="list-group-item">DEVniverse Notion Template - The content creater's space
-                        <div>
-                            <p className="text-muted l-text">products</p>
-                        </div>
-                    </li>
-                    <li className="list-group-item">Backkend Handbook for Ruby on Rails applications
-                        <div>
-                            <p className="text-muted l-text">products</p>
-                        </div>
-                    </li>
-                    <li className="list-group-item">33 GitHub projects I have bookmarked and you should
-                        <div>
-                            <p className="text-muted l-text">misc</p>
-                        </div>
-                    </li>
+        <div className="card mt-4">	
+        <div class="card-header font-weight-bold a-right">
+            <h5 className="text-bold mt-2">Listings</h5>
+            <a href="#" class="post-l">See all</a>
+        </div>
+                <ul id="listingsPost" className="list-group list-group-flush">
+                    {
+                        listingPosts.map(listingPost => (
+                            <a href="#" className="list-group-item">{listingPost.title} 
+                            <div>
+                                <p className="text-muted l-text">{listingPost.category}</p>
+                            </div>
+                        </a>
+                        ))
+                    }
+                   
                     <p className="text-center font-weight-bold mt-2">Create a Listing</p>
                 </ul>
             </div>
