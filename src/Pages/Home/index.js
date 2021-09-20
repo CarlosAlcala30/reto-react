@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
 import "./style.scss"
 import { Container, Row, Col } from "reactstrap";
-
+import Media from 'react-media';
+import AsideRight from "../../Components/Aside/RightAside";
+import Footer from '../../Components/Footer';
+                                                                                                      
 const HomePage = props => {
     return (
         <main>
@@ -23,7 +26,15 @@ const HomePage = props => {
             )}                
 
             {matches.large && (
-              <div></div>
+           <main>
+             <Container>
+               <Row>
+                 <Col className="col-2"></Col>
+                 <Col className="col-6"></Col>
+                 <AsideRight />
+               </Row>
+             </Container>
+           </main>
             )}
           </Fragment>
         )}
@@ -33,3 +44,5 @@ const HomePage = props => {
 
      );
 }
+
+export default HomePage

@@ -19,7 +19,6 @@ function HelpBlock() {
                 </li>
             </ul>
         </div>
-
     )
 }
 

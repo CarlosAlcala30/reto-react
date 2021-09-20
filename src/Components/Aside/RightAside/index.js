@@ -1,12 +1,12 @@
 import React from 'react';
-import './index.scss';
+//import './index.scss';
 //import Avatar from '@material-ui/core/Avatar';
 //import firebase from '../../config/firebaseConfig';
 //import { useAuthState } from 'react-firebase-hooks/auth';
 import SponsorsBlock from './SponsorsBlock';
 import Listings from './Listings';
 import NewsBlock from './NewsBlock';
-import DiscussBlock from './discussBlock';
+import DiscussBlock from './DiscussBlock';
 import HelpBlock from './HelpBlock';
 import Explainlikeimfive from './Explainlikeimfive';
 import ChallengeBlock from './ChallengeBlock';
@@ -21,7 +21,7 @@ const AsideRight = () => {
  return (
       
           <aside
-            className="d-none d-xl-block col-xl-3">
+            className="d-none d-xl-block col-xl-4">
               <SponsorsBlock />
               <Listings />
               <NewsBlock />

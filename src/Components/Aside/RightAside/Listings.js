@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Listings(props) {
+function Listings() {
     return (
      
             <div className="card mt-4 r-card-list">
