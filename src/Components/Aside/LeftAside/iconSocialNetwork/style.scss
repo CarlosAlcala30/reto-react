@@ -3,8 +3,9 @@
 .image-social-network{
     width: 24;
     height: 24;
+    padding: .7rem;
     &:hover{
-        background-color: $base-20;
+        background-color: $base-10;
         cursor: pointer;
     }
 }

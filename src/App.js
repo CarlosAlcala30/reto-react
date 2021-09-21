@@ -74,8 +74,6 @@ export default function App() {
   );
 }
 
-
-
 function Register() {
   return <h2>Register</h2>;
 }
@@ -84,6 +82,8 @@ function Search() {
 return <h2>Search</h2>}
 
 function PostDetail() {
-  const { id } = useParams();
+  const {id} = useParams();
   return <h2>Post Detail - {id}</h2>;
 }
+
+

@@ -1,0 +1,29 @@
+@import "/src/Assets/Styles/global.scss";
+
+.aside-tag{
+    padding-left: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-size: 14px;
+    //width: 240px;
+    border-radius: 4px;
+    &:hover{
+        color: $accent-brand;
+        background-color: $base-10;
+        cursor: pointer;
+    }
+}
+
+.tag-button{
+    display: none;
+    height: 1.5rem;
+    border-style: none;
+    color: $base-0;
+    border-radius: 4px;
+    margin-left: 4.5rem;
+    font-size: 12px;
+    background-color: $accent-brand;
+    &:hover{
+        background-color: $accent-brand-darker
+    }
+}
