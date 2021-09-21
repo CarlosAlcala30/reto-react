@@ -13,10 +13,14 @@ import iconSocial from "../../Components/Aside/LeftAside/AsideLink/iconSocial";
 import AsideTag from "../../Components/Aside/LeftAside/AsideTags";
 import hastag from "../../Components/Aside/LeftAside/AsideTags/hastag";
 import ShopCard from "../../Components/Cards/ShopCard";
+import Media from 'react-media';
+import AsideRight from "../../Components/Aside/RightAside";
+import Footer from '../../Components/Footer';
+                                                                                                      
 
 const HomePage = props => {
     return (
-        <main>
+        <main className="container">
       <Media
         queries={{
           small: "(max-width: 399px)",
@@ -73,17 +77,22 @@ const HomePage = props => {
                             <ShopCard />
                           </div>
                           </Col>
-                          <Col>prueba</Col>
-                          <Col>prueba</Col>
+                          <Col xs='12' md='8' xl='6'>
+                          <Content/>
+                          </Col>
+                          <Col xs='0' md='0' xl='3'>
+                          <RightSidebar/>
+                          </Col> 
                       </Row>
                   </Container>
               </div>
             )}
+             )} <Footer />
           </Fragment>
         )}
-      </Media>
-    </main>
-            
+       </Media>
+     </main>
+       
 
      );
 }

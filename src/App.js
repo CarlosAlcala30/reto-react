@@ -1,72 +1,77 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { isExpired } from "react-jwt";
+
+import "./App.scss";
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams
+  useParams,
+  Redirect,
 } from "react-router-dom";
-import { Container, Row, Col } from "reactstrap";
-import Media from "react-media";
-import HomePage from "./Pages/Home/index"
+
+import Navegacion from "./Components/Navbar";
+
+//paginas
+import LoginPage from "./Pages/Login";
+import CreatePostPage from "./Pages/CreatePost";
+import HomePage from "./Pages/Home";
 
 export default function App() {
+  const [search, setSearch] = useState("");
+  const [userLogged, setUserLogged] = useState({});
+  const [isLogged, setIsLogged] = useState();
+
+  useEffect(() => {
+    const userInfo = JSON.parse(localStorage.getItem("userData"));
+    if (userInfo) {
+      const expired = isExpired(userInfo.token);
+      if (!expired) {
+        setUserLogged(userInfo);
+        setIsLogged(true);
+      } else {
+        localStorage.removeItem("userData");
+      }
+    }
+  }, []);
+
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-            <li>
-              <Link to="/create-post">Create Post</Link>
-            </li>
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
-            <li>
-              <Link to="/post-detail/4wda1sda4f">Post Detail</Link>
-            </li>
-          </ul>
-        </nav>
+      {/*navbar*/}
+      <Navegacion
+        loginPage="/login"
+        createPage="/register"
+        searchState={search}
+        setSearchState={setSearch}
+        isLogged={isLogged}
+        userLogged={userLogged}
+      />
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/create-post">
-            <CreatePost />
-          </Route>           
-          <Route path="/post-detail/:id" >
-            <PostDetail />
-          </Route>   
-          <Route path="/">
-            <HomePage />
-
-          </Route>                   
-        </Switch>
-      </div>
+      {/*paginas*/}
+      <Switch>
+        <Route path="/login">
+          <LoginPage handlerUserLogged={setUserLogged} handlerIsLogged={setIsLogged} />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/search">
+          <Search />
+        </Route>
+        <Route path="/create-post">
+          {isLogged ? <CreatePostPage /> : <Redirect to="/" />}
+        </Route>
+        <Route path="/post-detail/:id">
+          <PostDetail />
+        </Route>
+        <Route path="/">
+          <HomePage />
+        </Route>
+      </Switch>
+      {/*footer*/}
     </Router>
   );
-}
-
-function Login() {
-  return <h2>Login</h2>;
 }
 
 function Register() {
@@ -74,12 +79,7 @@ function Register() {
 }
 
 function Search() {
-  return <h2>Search</h2>;
-}
-
-function CreatePost() {
-  return <h2>CreatePost</h2>;
-}
+return <h2>Search</h2>}
 
 function PostDetail() {
   const {id} = useParams();

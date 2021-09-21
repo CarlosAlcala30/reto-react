@@ -3,22 +3,27 @@ import "./style.scss";
 
 import Media from "react-media";
 
+//componenetes
 import LoginButton from "../Buttons/LoginButton";
 import CreateButton from "../Buttons/CreateButton";
 import InputSearch from "../Inputs/SearchInput";
 import NavbarButton from "../Buttons/NavbarButton";
+import MenuProfile from "../Menus/ProfileMenu";
 
 import { useHistory } from "react-router-dom";
 
+//iconos
 import Logo from "../../Assets/Images/icons/logo.svg";
 import Hamburger from "../../Assets/Images/icons/hamburger.svg";
 import Search from "../../Assets/Images/icons/search.svg";
+import Notificaciones from "../../Assets/Images/icons/notifications.svg"
+import Conectado from "../../Assets/Images/icons/connect.svg"
 
 const Navegacion = (props) => {
   let history = useHistory();
-  const { loginPage, createPage, searchState, setSearchState } = props;
+  const { loginPage, createPage, searchState, setSearchState, isLogged,userLogged } = props;
   return (
-    <div>
+    <div className="navbar-container">
       <Media
         queries={{
           small: "(max-width: 399px)",
@@ -46,19 +51,31 @@ const Navegacion = (props) => {
                   </div>                  
                   
                 </div>
-                <div className="nav-right-side">
-                  <NavbarButton 
-                      icon={Search}
-                      page="/search"
-                    />
-                  <CreateButton text="Create account" page={createPage} />
-                </div>
+                { 
+                  isLogged ? (
+                    <div className="nav-right-side">                      
+                      <NavbarButton icon={Search} page="/search"/>
+                      <NavbarButton icon={Notificaciones}/>
+                      <NavbarButton icon={Conectado}/>
+                      <MenuProfile userLogged={userLogged}/>
+                    </div>
+                  ) 
+                    :                   
+                  ( 
+                    <div className="nav-right-side">
+                      <NavbarButton icon={Search} page="/search"/>
+                      <CreateButton text="Create account" page={createPage} />
+                    </div>
+                  ) 
+                
+                }
               </div>
             )}
 
             {matches.medium && (
               <div className="nav-container">
                 <div className="nav-left-side">
+                  <NavbarButton icon={Hamburger}/>
                   <div className="logo">
                     <img
                       src={Logo}
@@ -70,11 +87,24 @@ const Navegacion = (props) => {
                     />
                   </div>
                 </div>
-                <div className="nav-right-side">
-                  <NavbarButton icon={Search} page="/search"/>
-                  <LoginButton text="Log in" page={loginPage} />
-                  <CreateButton text="Create account" page={createPage} />
-                </div>
+                { 
+                  isLogged ? (
+                    <div className="nav-right-side">                      
+                      <NavbarButton icon={Search} page="/search"/>
+                      <NavbarButton icon={Notificaciones}/>
+                      <NavbarButton icon={Conectado}/>
+                      <MenuProfile userLogged={userLogged}/>
+                    </div>
+                  ) 
+                    :                   
+                  ( 
+                    <div className="nav-right-side">
+                      <NavbarButton icon={Search} page="/search"/>
+                      <CreateButton text="Create account" page={createPage} />
+                    </div>
+                  ) 
+                
+                }
               </div>
             )}                
 
@@ -98,10 +128,25 @@ const Navegacion = (props) => {
                     setSearchState={setSearchState}
                   />
                 </div>
-                <div className="nav-right-side">
-                  <LoginButton text="Log in" page={loginPage} />
-                  <CreateButton text="Create account" page={createPage} />
-                </div>
+                { 
+                  isLogged ? (
+                    <div className="nav-right-side">
+                      <CreateButton text="Create Post" page="/create-post" />
+                      <NavbarButton icon={Notificaciones}/>
+                      <NavbarButton icon={Conectado}/>
+                      <MenuProfile userLogged={userLogged}/>
+                    </div>
+                  ) 
+                    :                   
+                  ( 
+                    <div className="nav-right-side">
+                      <LoginButton text="Log in" page={loginPage} />
+                      <CreateButton text="Create account" page={createPage} />
+                    </div>
+                  ) 
+                
+                }
+                
               </div>
             )}
           </Fragment>
